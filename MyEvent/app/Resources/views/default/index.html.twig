@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {#<div ng-view></div>#}
+
+    <h1>hello people of this earth!</h1>
+    {{ dump(results) }}
+        <p>hehehe {{ lol|raw }}</p>
+
+    {% for result in results['events']['event'] %}
+        {#<li>{{ user}}</li>#}
+
+        <p> {{ result['title'] }} <br>{{ result['description']|raw }} .</p>
+        <p> {{ result['start_time']|raw }} {{ result['stop_time']|raw }}.</p>
+        <p>{{ result['venue_name']|raw }} {{ result['city_name']|raw }}.</p>
+        <p><a href="{{ result['url'] }}">link</a><br></p>
+
+    {% endfor %}
+{% endblock %}
+
